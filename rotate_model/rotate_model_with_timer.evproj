@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.5.0" version-extra="devel_x64">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="0.69019607843137"/>
+   <field name="y" value="0.69019607843137"/>
+   <field name="z" value="0.69019607843137"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_rotate_model_with_timer">
+  <resource internal="false" id="57f52905-d46-787-792-fd4" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="ev_pattern.png">
+   <filename value="ev_pattern.png"/>
+  </resource>
+  <resource internal="false" id="57f52910-c5f-c22-72e-855" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="ev_model.fbx">
+   <filename value="ev_model.fbx"/>
+  </resource>
+  <resource internal="false" id="5be454e1-44a-fe3-8dc-bea" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="clockwise.png">
+   <filename value="clockwise.png"/>
+  </resource>
+  <resource internal="false" id="5be4556e-f6c-edf-2c9-996" kind="image" local="true" forceExport="false" rawAssetsExport="false" name="counter-clockwise.png">
+   <filename value="counter-clockwise.png"/>
+  </resource>
+  <resource internal="true" id="OpenSans-Regular" kind="font" local="false" forceExport="false" rawAssetsExport="false" name="OpenSans-Regular.ttf">
+   <filename value="OpenSans-Regular.ttf"/>
+   <source value="${STUDIO_RESOURCES_DIR}/fonts/OpenSans-Regular.ttf"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="67191c9a-b868-c396-c7a9"/>
+   <item id="6718e842-3778-843c-6477"/>
+   <item id="Viewer"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="HeadUpDisplay" name="HeadUpDisplay" type="node.hud" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5be45427-f887-6b34-cde7"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="57f528fd-5893-3a64-ae67"/>
+    <item value="HeadUpDisplay"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="6718e842-3778-843c-6477"/>
+  </reactor>
+  <reactor id="57f528fd-5893-3a64-ae67" name="logo" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="1.862645149231e-09"/>
+    <field name="y" value="7.4083916842937e-05"/>
+    <field name="z" value="0.0040679154917598"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="0.08"/>
+    <field name="y" value="0.08"/>
+    <field name="z" value="0.08"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="57f52910-c5f-c22-72e-855"/>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="5be45427-f887-6b34-cde7" name="touch_zone" type="node.rect" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="5be4551f-510d6-294c-a881"/>
+    <item value="5be454a6-fd38-ba97-da37"/>
+    <item value="67190515-8879-8b8a-235f"/>
+   </parameter>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-bottom"/>
+   <parameter name="rect.size">
+    <field name="x" value="95.000000%"/>
+    <field name="y" value="12.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0.3"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000px"/>
+    <field name="y" value="2.500000%w"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="5be454a6-fd38-ba97-da37" name="clockwise_icon" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="right-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="keep-aspect"/>
+    <field name="y" value="60.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="-20.000000%h"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5be454e1-44a-fe3-8dc-bea"/>
+  </reactor>
+  <reactor id="5be4551f-510d6-294c-a881" name="counter_clockwise_icon" type="rect.image" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000000F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="left-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="keep-aspect"/>
+    <field name="y" value="60.000000%"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="20.000000%h"/>
+    <field name="y" value="0.000000px"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000px"/>
+    <field name="right" value="0.000000px"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="image.resourceId" value="5be4556e-f6c-edf-2c9-996"/>
+  </reactor>
+  <reactor id="6718e842-3778-843c-6477" name="CameraManipulator" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="multitouch"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-0.25"/>
+    <field name="z" value="0.15"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="67190515-8879-8b8a-235f" name="timer_text" type="rect.text" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x00000010"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="layer" value="0.01"/>
+   <parameter name="rect.position" value="center-center"/>
+   <parameter name="rect.size">
+    <field name="x" value="100.000000%c"/>
+    <field name="y" value="keep-aspect"/>
+    <field name="policy" value="simple"/>
+   </parameter>
+   <parameter name="rect.color">
+    <field name="red" value="0"/>
+    <field name="green" value="0"/>
+    <field name="blue" value="0"/>
+    <field name="alpha" value="0"/>
+   </parameter>
+   <parameter name="rect.shift">
+    <field name="x" value="0.000000%"/>
+    <field name="y" value="0.000000%"/>
+   </parameter>
+   <parameter name="rect.padding">
+    <field name="top" value="0.000000%"/>
+    <field name="right" value="0.000000%"/>
+    <field name="bottom" value="keep-aspect"/>
+    <field name="left" value="keep-aspect"/>
+   </parameter>
+   <parameter name="rect.scalePolicy" value="inherit"/>
+   <parameter name="text.font_id" value="OpenSans-Regular"/>
+   <parameter name="text.font_size" value="5.000000%v"/>
+   <parameter name="text.color">
+    <field name="red" value="1"/>
+    <field name="green" value="1"/>
+    <field name="blue" value="1"/>
+    <field name="alpha" value="1"/>
+   </parameter>
+   <parameter name="text.align" value="center-center"/>
+   <parameter name="text.auto_wrap" value="false"/>
+   <parameter name="text.line_spacing" value="0.15"/>
+   <parameter name="text.value" value="5"/>
+  </reactor>
+  <reactor id="67191c9a-b868-c396-c7a9" name="hide_timer" type="timer" enabled="true"/>
+ </reactors>
+ <exportParameters last="ipa">
+  <parameters format="exe" filename="/Users/laptabrok/Projects/evtoolbox-examples-git/advanced/rotate_model/rotate_model.exe" appName="rotate_model - EVI Windows App" appId="rotate.model" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true" runAfterExport="false" targetPlatform="1"/>
+  <parameters format="ipa" filename="/Users/laptabrok/Documents/rotate_model.ipa" appName="rotate_model - EVI iOS App" appId="ru.EligoVision.rotate.model" arch="" version="1.0" build="1" configurationFile="" appIconPath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" category="" copyright="" supportedOrientations="1" appStoreDistribution="false" bundleName="rotate_model - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений" abis="armv7s,arm64"/>
+ </exportParameters>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>
