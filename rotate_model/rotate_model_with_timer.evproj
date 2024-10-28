@@ -260,9 +260,7 @@
   </reactor>
   <reactor id="67191c9a-b868-c396-c7a9" name="hide_timer" type="timer" enabled="true"/>
  </reactors>
- <exportParameters last="ipa">
-  <parameters format="exe" filename="/Users/laptabrok/Projects/evtoolbox-examples-git/advanced/rotate_model/rotate_model.exe" appName="rotate_model - EVI Windows App" appId="rotate.model" arch="x64" version="1.0" build="1" configurationFile="" appIconPath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="false" frameShift.centering="true" runAfterExport="false" targetPlatform="1"/>
-  <parameters format="ipa" filename="/Users/laptabrok/Documents/rotate_model.ipa" appName="rotate_model - EVI iOS App" appId="ru.EligoVision.rotate.model" arch="" version="1.0" build="1" configurationFile="" appIconPath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//AppIcon.png" loadingImagePath="/Users/laptabrok/Projects/ev_evi/trunk/build/darwin.advanced.int/src/ev_studio/ev_studio.app/Contents/MacOS/studio_data//LaunchImage.png" category="" copyright="" supportedOrientations="1" appStoreDistribution="false" bundleName="rotate_model - EVI iOS App" cameraDescription="Дополненная реальность ждет!" photolibraryDescription="Снимки будут сохранены в Фото!" deviceMotionDescription="Необходимо для отслеживания движений" abis="armv7s,arm64"/>
+ <exportParameters>
  </exportParameters>
  <workspace>
   <preview platform="1"/>
