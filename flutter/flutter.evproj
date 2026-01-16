@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Project version="3.6.1" version-extra="devel_x64">
+ <presentationParams>
+  <parameter name="enableStatistics" value="true"/>
+  <parameter name="flipFrames">
+   <field name="x" value="false"/>
+   <field name="y" value="false"/>
+  </parameter>
+  <parameter name="clipPlanes">
+   <field name="near" value="0.01"/>
+   <field name="far" value="10"/>
+  </parameter>
+  <parameter name="useMainCamera" value="false"/>
+  <parameter name="clearColor">
+   <field name="x" value="1"/>
+   <field name="y" value="1"/>
+   <field name="z" value="1"/>
+   <field name="w" value="1"/>
+  </parameter>
+ </presentationParams>
+ <resources dir="resources_flutter">
+  <resource internal="false" id="69677c63-8d3-5ec-bad-11c" kind="model" local="true" forceExport="false" rawAssetsExport="false" name="ev_model.fbx">
+   <filename value="ev_model.fbx"/>
+  </resource>
+  <resource internal="false" id="69678a31-9c1-6af-c23-143" kind="script" local="true" forceExport="true" rawAssetsExport="false" name="main.lua">
+   <filename value="main.lua"/>
+  </resource>
+  <resource internal="false" id="6967a5ee-b92-a23-dbf-bdf" kind="audio" local="true" forceExport="false" rawAssetsExport="false" name="fanfare.mp3">
+   <filename value="fanfare.mp3"/>
+  </resource>
+ </resources>
+ <reactors>
+  <order>
+   <item id="6969052d-b92a-23db-fbdf"/>
+   <item id="6967a5d3-7a5d-543c-1db3"/>
+   <item id="System"/>
+   <item id="Viewer"/>
+   <item id="69677ce0-7ff6-55ef-9c16"/>
+   <item id="Scene"/>
+  </order>
+  <reactor id="Scene" name="Scene" type="node.scene" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children">
+    <item value="69677c5b-9c73-a493-d91d"/>
+   </parameter>
+   <view expanded="true"/>
+  </reactor>
+  <reactor id="System" name="System" type="system" enabled="true">
+   <parameter name="albumName" value="evi_app"/>
+  </reactor>
+  <reactor id="Viewer" name="Viewer" type="viewer" enabled="true">
+   <parameter name="cameraManipulator" value="69677ce0-7ff6-55ef-9c16"/>
+  </reactor>
+  <reactor id="69677c5b-9c73-a493-d91d" name="model/logo" type="node.model" enabled="true">
+   <parameter name="nodeMask">
+    <field name="mask" value="0x0000001F"/>
+    <field name="unchangedBits" value="0x00000000"/>
+   </parameter>
+   <parameter name="children"/>
+   <parameter name="trans">
+    <field name="x" value="0"/>
+    <field name="y" value="0.00092604011297226"/>
+    <field name="z" value="0.050848942250013"/>
+   </parameter>
+   <parameter name="rotate">
+    <field name="x" value="90"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0"/>
+   </parameter>
+   <parameter name="scale">
+    <field name="x" value="1"/>
+    <field name="y" value="1"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="kdTrees" value="auto"/>
+   <parameter name="rig" value="auto"/>
+   <parameter name="morph" value="auto"/>
+   <parameter name="gpuInstancing" value="auto"/>
+   <parameter name="gpuInstancesMinCount" value="50"/>
+   <parameter name="model" value="69677c63-8d3-5ec-bad-11c"/>
+  </reactor>
+  <reactor id="69677ce0-7ff6-55ef-9c16" name="CameraManipulator" type="camera_manipulator" enabled="true">
+   <parameter name="kind" value="trackball"/>
+   <parameter name="homeEye">
+    <field name="x" value="0"/>
+    <field name="y" value="-2"/>
+    <field name="z" value="0.2"/>
+   </parameter>
+   <parameter name="homeCenter">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="0.2"/>
+   </parameter>
+   <parameter name="homeUp">
+    <field name="x" value="0"/>
+    <field name="y" value="0"/>
+    <field name="z" value="1"/>
+   </parameter>
+   <parameter name="autoComputeHomePosition" value="false"/>
+  </reactor>
+  <reactor id="6967a5d3-7a5d-543c-1db3" name="audio/main" type="audio" enabled="true">
+   <parameter name="audioResource" value="6967a5ee-b92-a23-dbf-bdf"/>
+   <parameter name="volume" value="1"/>
+   <parameter name="pan" value="0"/>
+   <parameter name="playMode" value="once"/>
+   <parameter name="liveDecoding" value="false"/>
+  </reactor>
+  <reactor id="6969052d-b92a-23db-fbdf" name="timer/ui" type="timer" enabled="true"/>
+ </reactors>
+ <exportParameters last="apk">
+  <parameters format="apk" appName="Flutter Example" appId="ru.eligovision.flutter" arch="" version="1.0" build="1" filename="${PROJECT_DIR}/flutter.apk" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" usageHardwareCamera="optional" usageARCore="optional" gradleOpt="" selectedPresetId="user" abis="arm64-v8a" minApi="24" targetApi="36">
+   <presets>
+    <preset id="user" name="User Preset">
+     <files>
+      <file name="AndroidManifest.xml" path="${ANDROID_DATA_DIR}/flutter/AndroidManifest.xml.in"/>
+      <file name="build.gradle" path="${PROJECT_DIR}/misc/build.gradle.in"/>
+      <file name="gradle.properties" path="${ANDROID_DATA_DIR}/gradle.properties.in"/>
+      <file name="local.properties" path="${ANDROID_DATA_DIR}/local.properties.in"/>
+     </files>
+    </preset>
+   </presets>
+  </parameters>
+  <parameters format="exe" appName="flutter - EVI Windows App" appId="flutter" arch="x64" version="1.0" build="1" filename="${PROJECT_DIR}/flutter.exe" appIconPath="${STUDIO_DATA_DIR}/AppIcon.png" loadingImagePath="${STUDIO_DATA_DIR}/LaunchImage.png" configurationFile="" category="" copyright="" supportedOrientations="1" frameMode="window" frameSize.width="1280" frameSize.height="720" frameShift.x="0" frameShift.y="0" startOnLastDisplay="false" noborder="false" alwaysOnTop="false" createInstaller="false" frameSize.maximize="false" frameSize.ignoreWindowDecoration="true" frameShift.centering="true" runAfterExport="false" targetPlatform="1"/>
+ </exportParameters>
+ <workspace>
+  <preview platform="1"/>
+ </workspace>
+</Project>

@@ -1,0 +1,111 @@
+wrapper {
+	gradleVersion = '9.0.0'
+	distributionUrl = distributionUrl.replace("bin", "all")
+}
+
+buildscript {
+	repositories {
+		google()
+		mavenCentral()
+		maven { url = 'https://jitpack.io' }
+	}
+	dependencies {
+		classpath 'com.android.tools.build:gradle:8.12.2'
+	}
+}
+
+allprojects {
+	String storageUrl = System.env.FLUTTER_STORAGE_BASE_URL ?: "https://storage.googleapis.com"
+
+	repositories {
+		google()
+		mavenCentral()
+		mavenLocal()
+		maven { url = 'https://jitpack.io' }
+
+		maven {
+			url = 'C:/misc/flutter/flutter_example/install/host/outputs/repo'
+		}
+		maven {
+			url = "$storageUrl/download.flutter.io"
+		}
+	}
+}
+
+apply plugin: 'com.android.application'
+
+base {
+	archivesName = "evi_app"
+}
+
+android {
+	namespace = "$APP_PACKAGE"
+
+	compileSdkVersion $AndroidSdk_Version
+
+	defaultConfig {
+		applicationId "$APP_PACKAGE"
+
+		minSdkVersion "$MIN_SDK_VERSION"
+		targetSdkVersion "$TARGET_SDK_VERSION"
+
+		versionCode $VERSION_CODE
+		versionName "$VERSION_NAME"
+
+		resConfigs "en", "ru"
+	}
+
+	bundle {
+		language {
+			enableSplit = false
+		}
+	}
+
+	signingConfigs {
+		release {
+			storeFile file("$KEYSTORE_FILE")
+			storePassword "$KEYSTORE_PASSW"
+			keyAlias "$KEYSTORE_KEY_ALIAS"
+			keyPassword "$KEYSTORE_KEY_PASSW"
+
+			storeType "jks"
+		}
+	}
+
+	buildTypes {
+		debug {
+			signingConfig = signingConfigs.release
+		}
+
+		release {
+			signingConfig = signingConfigs.release
+		}
+	}
+
+	flavorDimensions "market"
+	productFlavors {
+		full {
+			dimension "market"
+			ndk.abiFilters $ABI_FILTERS
+		}
+	}
+
+	aaptOptions {
+		noCompress 'eva', 'osgb', 'png', 'bmp', 'jpg', 'jpeg', 'tiff', 'tif', 'hdr', 'dds', 'ktx', 'webm'
+	}
+
+	assetPacks = [":install_time_pack"]
+}
+
+dependencies {
+	implementation (files('$AAR_DIR/evi-release.aar'))
+	implementation (files('$AAR_DIR/evar2-release.aar'))
+	implementation 'androidx.core:core:1.17.0'
+	implementation 'com.google.ar:core:1.50.0'
+	implementation 'com.google.android.material:material:1.13.0'
+
+	implementation (files('$AAR_DIR/flutter/evi_plugin_flutter-release.aar'))
+
+	// Change it with your flutter module
+	implementation 'ru.eligovision.flutter_example:flutter_release:1.0'
+}
